@@ -1,45 +1,30 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import { Layout } from "./components/Layout";
+import { Home } from "./pages/Home";
+import { VectorLayers } from "./pages/VectorLayers";
+import { Events } from "./pages/Events";
+import { PolylineMarker } from "./pages/PolylineMarker";
+import { TaiwanPaths } from "./pages/taiwan";
 
-function App() {
-  const [count, setCount] = useState(0)
+import "leaflet/dist/leaflet.css";
+import "./App.css"
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
-}
+const App: React.FC = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="vector-layers" element={<VectorLayers />} />
+        <Route path="events" element={<Events />} />
+        <Route path="polyline-marker" element={<PolylineMarker />} />
+        <Route path="taiwan" element={<TaiwanPaths />} />
+      </Route>
+    </Routes>
+  </BrowserRouter>
+)
 
 export default App
