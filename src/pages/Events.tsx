@@ -26,12 +26,12 @@ const LocationMarker: React.FC = () => {
   )
 }
 
-export const Events: React.FC = () => (
+const Page: React.FC = () => (
   <MapContainer
     center={{ lat: 51.505, lng: -0.09 }}
     zoom={13}
-    scrollWheelZoom={true}
-    style={{ width: "1000px", height: "600px" }}
+    scrollWheelZoom
+    style={{ width: "100%", height: "100%" }}
   >
     <TileLayer
       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -40,3 +40,5 @@ export const Events: React.FC = () => (
     <LocationMarker />
   </MapContainer>
 )
+
+export default Page;

@@ -1,7 +1,5 @@
 import React from 'react'
-import {
-  MapContainer, TileLayer, Marker, Popup, Polyline
-} from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, Polyline, GeoJSON } from 'react-leaflet'
 import GpxParser from 'gpxparser'
 import { type LatLngExpression } from 'leaflet';
 
@@ -16,7 +14,12 @@ const Page: React.FC = () => {
   const { distance } = tracks[0];
   const { total } = distance;
   const positions = gpx.tracks[0].points.map(p => [p.lat, p.lon]) as LatLngExpression[]
-  
+  const geoJsonObj: any = [
+    {
+      type: "LineString",
+      coordinates: positions,
+    },
+  ];
   return (
     <MapContainer
       center={positions[0]}
@@ -45,10 +48,11 @@ const Page: React.FC = () => {
         <Popup>
           path goal
         </Popup>
+        <GeoJSON data={geoJsonObj} />
       </Marker>
     </MapContainer>
   )
 }
 
-export default Page;
+export default Page
 
