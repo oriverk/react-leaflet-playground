@@ -15,9 +15,8 @@ plugins:
   - react
   - '@typescript-eslint'
 rules: {
-  'arrow-body-style': 1,
+  'arrow-body-style': 0,
   'no-unused-vars': 1,
-  'no-console': 0,
   'import/extensions': 0,
   'import/no-unresolved': 0,
   'import/prefer-default-export': 0,
