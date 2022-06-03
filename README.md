@@ -34,3 +34,11 @@ mainly used packages
 - /geo
 - /taiwan
   - multi geo paths with aiwan gpx file data when going around Taiwan by bicycle
+
+## Troubles
+
+- gpx file is super heavy
+  - no solution...
+  - use other geo files like `.geojson` instead of `.gpx`
+- cannot render marker icon
+  - solution: [react-leaflet | Map marker image does not appear on Next.js #808](https://github.com/PaulLeCam/react-leaflet/issues/808)
