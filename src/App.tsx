@@ -11,6 +11,7 @@ const Events = React.lazy(() => import("./pages/Events"));
 const PolylineMarker = React.lazy(() => import("./pages/PolylineMarker"));
 const GeoJsonComponent = React.lazy(() => import("./pages/Geojson"));
 const Taiwan = React.lazy(() => import("./pages/Taiwan"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
 
 const App: React.FC = () => (
   <BrowserRouter>
@@ -23,6 +24,7 @@ const App: React.FC = () => (
         <Route path="polyline-marker" element={<PolylineMarker />} />
         <Route path="geo" element={<GeoJsonComponent />} />
         <Route path="taiwan" element={<Taiwan />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   </BrowserRouter>
