@@ -1,6 +1,6 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
-import { Layout } from "./components/Layouts"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Layout } from "./components/Layouts";
 
 import "leaflet/dist/leaflet.css";
 
@@ -26,6 +26,6 @@ const App: React.FC = () => (
       </Route>
     </Routes>
   </BrowserRouter>
-)
+);
 
-export default App
+export default App;

@@ -1,5 +1,5 @@
-import React from 'react'
-import { MapContainer, TileLayer } from 'react-leaflet'
+import React from "react";
+import { MapContainer, TileLayer } from "react-leaflet";
 
 const Home: React.FC = () => (
   <MapContainer
@@ -13,6 +13,6 @@ const Home: React.FC = () => (
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
   </MapContainer>
-)
+);
 
 export default Home;

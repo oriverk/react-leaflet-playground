@@ -7,19 +7,19 @@ import { Loading } from "../Loading";
 
 type ContextType = {
   isModalOpen: boolean;
-  setModalOpen: React.Dispatch<React.SetStateAction<boolean>>
-}
+  setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
 export function useModal() {
-  return useOutletContext<ContextType>()
+  return useOutletContext<ContextType>();
 }
 
 export const Layout: React.FC = () => {
-  const [isModalOpen, setModalOpen] = useState<boolean>(true)
+  const [isModalOpen, setModalOpen] = useState<boolean>(true);
 
   const toggleDrawer = useCallback(() => {
-    setModalOpen(prev => !prev)
-  }, [isModalOpen])
+    setModalOpen((prev) => !prev);
+  }, [isModalOpen]);
 
   return (
     <Flex flexDir="column" h="100vh">
@@ -30,5 +30,5 @@ export const Layout: React.FC = () => {
         </Suspense>
       </Box>
     </Flex>
-  )
-}
+  );
+};

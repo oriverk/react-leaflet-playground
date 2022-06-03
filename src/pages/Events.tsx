@@ -1,30 +1,27 @@
 import React, { useState } from "react";
-import {
-  MapContainer, TileLayer, Marker, Popup,
-  useMapEvents
-} from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
 
 // https://react-leaflet.js.org/docs/example-events/
 
 const LocationMarker: React.FC = () => {
-  const [position, setPosition] = useState(null)
+  const [position, setPosition] = useState(null);
   const map = useMapEvents({
     click() {
-      map.locate()
+      map.locate();
     },
     locationfound(e) {
       // @ts-ignore
-      setPosition(e.latlng)
-      map.flyTo(e.latlng, map.getZoom())
+      setPosition(e.latlng);
+      map.flyTo(e.latlng, map.getZoom());
     },
-  })
+  });
 
   return position === null ? null : (
     <Marker position={position}>
       <Popup>You are here</Popup>
     </Marker>
-  )
-}
+  );
+};
 
 const Page: React.FC = () => (
   <MapContainer
@@ -39,6 +36,6 @@ const Page: React.FC = () => (
     />
     <LocationMarker />
   </MapContainer>
-)
+);
 
 export default Page;

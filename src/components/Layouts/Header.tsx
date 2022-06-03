@@ -1,22 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Box, Text, chakra, Flex, HStack, IconButton, useBreakpointValue } from '@chakra-ui/react';
-import { HamburgerIcon, ArrowUpIcon, ArrowDownIcon } from '@chakra-ui/icons';
+import { Box, Text, chakra, Flex, HStack, IconButton, useBreakpointValue } from "@chakra-ui/react";
+import { HamburgerIcon, ArrowUpIcon, ArrowDownIcon } from "@chakra-ui/icons";
 
 type Props = {
-  toggleDrawer: () => void
-}
+  toggleDrawer: () => void;
+};
 
 export const Header: React.FC<Props> = (props) => {
   const { toggleDrawer } = props;
-  const headerIconSize = useBreakpointValue({ base: 'sm', md: 'md' });
+  const headerIconSize = useBreakpointValue({ base: "sm", md: "md" });
 
   return (
     <chakra.header shadow="sm" pos="sticky" top="0" zIndex="3" left="0" right="0" width="full">
       <chakra.div height={16} mx="auto" maxW="8xl">
         <Flex w="100%" h="100%" px="4" align="center" justify="space-between">
           <Link to="/">
-            <Box borderRadius="3xl" px={4} py={2} fontSize="lg" _hover={{ background: "gray.100"}}>
+            <Box borderRadius="3xl" px={4} py={2} fontSize="lg" _hover={{ background: "gray.100" }}>
               Playground
             </Box>
           </Link>
@@ -55,7 +55,7 @@ export const Header: React.FC<Props> = (props) => {
                   variant="ghost"
                   borderRadius="full"
                   color="gray.900"
-                  onClick={()=> null}
+                  onClick={() => null}
                   icon={<ArrowUpIcon />}
                 />
                 <IconButton
@@ -84,5 +84,5 @@ export const Header: React.FC<Props> = (props) => {
         </Flex>
       </chakra.div>
     </chakra.header>
-  )
-}
+  );
+};

@@ -3,11 +3,11 @@ import styled from "@emotion/styled";
 
 type Props = {
   size: number;
-}
+};
 
-const StyledDiv = styled('div')<Props>`
-  width: ${props => props.size}rem;
-  height: ${props => props.size}rem;
+const StyledDiv = styled("div")<Props>`
+  width: ${(props) => props.size}rem;
+  height: ${(props) => props.size}rem;
   border-radius: 30% 70% 59% 41% / 30% 26% 74% 70%;
   background: linear-gradient(
     to top right,
@@ -28,8 +28,6 @@ const StyledDiv = styled('div')<Props>`
     hsl(209.31, 100%, 44.92%) 88.9%,
     hsl(210, 100%, 45.1%) 100%
   );
-`
+`;
 
-export const GradientIcon: React.FC<Props> = (props) => (
-  <StyledDiv {...props} />
-)
+export const GradientIcon: React.FC<Props> = (props) => <StyledDiv {...props} />;

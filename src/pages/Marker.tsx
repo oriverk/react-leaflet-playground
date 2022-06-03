@@ -1,7 +1,7 @@
-import React from 'react'
-import { MapContainer, TileLayer, Marker, Popup, } from 'react-leaflet'
+import React from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
-import { CustomIconMarker } from '../components/Map/CustomMarker';
+import { CustomIconMarker } from "../components/Map/CustomMarker";
 
 // https://react-leaflet.js.org/docs/example-popup-marker/
 const Page: React.FC = () => (
@@ -26,6 +26,6 @@ const Page: React.FC = () => (
       </Popup>
     </CustomIconMarker>
   </MapContainer>
-)
+);
 
-export default Page
+export default Page;

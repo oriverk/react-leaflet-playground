@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import { Box, Heading, Text } from "@chakra-ui/react";
 
 import { round10 } from "../../utils/decimal";
@@ -10,7 +10,7 @@ type Props = {
   speedPerHour?: number;
   minElevation: number;
   maxElevation: number;
-}
+};
 
 export const PathPopupContent: React.FC<Props> = (props) => {
   const { name = "", totalDistance, minElevation, maxElevation } = props;
@@ -31,5 +31,5 @@ export const PathPopupContent: React.FC<Props> = (props) => {
       {/* <Text>累積標高(登り)：</Text> */}
       {/* <Text>累積標高(下り)：</Text> */}
     </Box>
-  )
-}
+  );
+};

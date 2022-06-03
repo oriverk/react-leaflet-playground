@@ -1,20 +1,20 @@
-import React from 'react'
-import GpxParser from 'gpxparser'
+import React from "react";
+import GpxParser from "gpxparser";
 
-import { GpxPath } from './GpxPath';
+import { GpxPath } from "./GpxPath";
 
 type Props = {
-  parsedGpxData: GpxParser[]
-}
+  parsedGpxData: GpxParser[];
+};
 
 export const MapContent: React.FC<Props> = (props) => {
   const { parsedGpxData } = props;
   return (
     <>
-      {parsedGpxData.map(data => {
+      {parsedGpxData.map((data) => {
         const { metadata, tracks } = data;
-        return <GpxPath metadata={metadata} tracks={tracks} />
+        return <GpxPath metadata={metadata} tracks={tracks} />;
       })}
     </>
-  )
-}
+  );
+};
