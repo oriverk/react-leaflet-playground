@@ -1,6 +1,19 @@
 import React from "react";
-import { type LatLngExpression } from "leaflet";
+import L, { type LatLngExpression } from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup, Circle, CircleMarker, Polyline, Polygon } from "react-leaflet";
+
+import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png?url";
+import markerIcon from "leaflet/dist/images/marker-icon.png?url";
+import markerShadow from "leaflet/dist/images/marker-shadow.png?url";
+
+// @ts-ignore
+// eslint-disable-next-line no-underscore-dangle
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconUrl: markerIcon,
+  iconRetinaUrl: markerIcon2x,
+  shadowUrl: markerShadow,
+});
 
 // https://react-leaflet.js.org/docs/example-vector-layers/
 const center = [51.505, -0.09] as LatLngExpression;
