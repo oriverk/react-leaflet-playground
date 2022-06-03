@@ -1,8 +1,9 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, Suspense } from "react";
 import { Outlet, useOutletContext } from "react-router-dom";
 import { Box, Flex } from "@chakra-ui/react";
 
 import { Header } from "./Header";
+import { Loading } from "../Loading";
 
 type ContextType = {
   isModalOpen: boolean;
@@ -23,8 +24,10 @@ export const Layout: React.FC = () => {
   return (
     <Flex flexDir="column" h="100vh">
       <Header toggleDrawer={toggleDrawer} />
-      <Box as="main" flex={1} w="full">
-        <Outlet context={{ isModalOpen, setModalOpen }} />
+      <Box as="main" flex={1} w="full" bg="gray.800">
+        <Suspense fallback={<Loading />}>
+          <Outlet context={{ isModalOpen, setModalOpen }} />
+        </Suspense>
       </Box>
     </Flex>
   )

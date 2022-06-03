@@ -1,16 +1,16 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import { Layout } from "./components/Layouts"
-import Home from "./pages/Home";
-import CustomMarker from "./pages/Marker"
-import VectorLayers from "./pages/VectorLayers"
-import Events from "./pages/Events"
-import PolylineMarker from "./pages/PolylineMarker"
-import GeoJsonComponent from "./pages/Geojson"
-import Taiwan from "./pages/Taiwan"
-
 
 import "leaflet/dist/leaflet.css";
+
+const Home = React.lazy(() => import("./pages/Home"));
+const CustomMarker = React.lazy(() => import("./pages/Marker"));
+const VectorLayers = React.lazy(() => import("./pages/VectorLayers"));
+const Events = React.lazy(() => import("./pages/Events"));
+const PolylineMarker = React.lazy(() => import("./pages/PolylineMarker"));
+const GeoJsonComponent = React.lazy(() => import("./pages/Geojson"));
+const Taiwan = React.lazy(() => import("./pages/Taiwan"));
 
 const App: React.FC = () => (
   <BrowserRouter>
