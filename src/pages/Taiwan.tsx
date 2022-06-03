@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import { type LatLngExpression } from 'leaflet';
 import { MapContainer, TileLayer } from 'react-leaflet'
 import GpxParser from 'gpxparser'
@@ -6,10 +6,9 @@ import GpxParser from 'gpxparser'
 import { MapContent } from '../components/Map/MapContent';
 import { Control } from '../components/Control';
 
-import taiwan2nd from "/assets/gpx/taiwan/taiwan2nd.gpx?raw"
-import taiwan3rd from "/assets/gpx/taiwan/taiwan3rd.gpx?raw"
+import all from "/assets/gpx/taiwan/all-merged.gpx?raw"
 
-const gpxFiles = [taiwan2nd, taiwan3rd,];
+const gpxFiles = [all];
 
 const Page: React.FC = () => {
   const parsedGpxData = gpxFiles.map(file => {
@@ -31,9 +30,7 @@ const Page: React.FC = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Suspense>
-          <MapContent parsedGpxData={parsedGpxData} />
-        </Suspense>
+        <MapContent parsedGpxData={parsedGpxData} />
       </MapContainer>
       <Control parsedGpxData={parsedGpxData} />
     </>
