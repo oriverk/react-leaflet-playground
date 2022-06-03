@@ -24,7 +24,8 @@ export const Control: React.FC<Props> = (props) => {
         {parsedGpxData.map((datum) => {
           const { tracks } = datum;
           return tracks.map((track) => {
-            const { name } = track;
+            const { name, points } = track;
+            const key = `${name}: ${points.flat().slice(0, 5).join()}`;
             return (
               <Box
                 mx="auto"
@@ -33,7 +34,7 @@ export const Control: React.FC<Props> = (props) => {
                 h={12}
                 borderRadius={16}
                 _hover={{ backgroundColor: "blackAlpha.200" }}
-                key={name}
+                key={key}
               >
                 <Text as="h3">
                   <Checkbox defaultChecked fontSize={3}>

@@ -12,11 +12,11 @@ export const Header: React.FC<Props> = (props) => {
   const headerIconSize = useBreakpointValue({ base: "sm", md: "md" });
 
   return (
-    <chakra.header shadow="sm" pos="sticky" top="0" zIndex="3" left="0" right="0" width="full">
+    <chakra.header shadow="sm" pos="sticky" top="0" zIndex="3" left="0" right="0" width="full" bg="whiteAlpha.200">
       <chakra.div height={16} mx="auto" maxW="8xl">
         <Flex w="100%" h="100%" px="4" align="center" justify="space-between">
           <Link to="/">
-            <Box borderRadius="3xl" px={4} py={2} fontSize="lg" _hover={{ background: "gray.100" }}>
+            <Box borderRadius="3xl" px={4} py={2} fontSize="lg" _hover={{ bg: "whiteAlpha.400" }}>
               Playground
             </Box>
           </Link>
@@ -44,7 +44,7 @@ export const Header: React.FC<Props> = (props) => {
                   </Text>
                 </Link>
                 <Link to="taiwan">
-                  <Text as="span" fontSize="lg" _hover={{ textDecoration: "underline" }}>
+                  <Text as="span" fontSize="lg" color="#00e1ee" _hover={{ color: "orange", textDecoration: "underline" }}>
                     Taiwan
                   </Text>
                 </Link>
@@ -54,7 +54,7 @@ export const Header: React.FC<Props> = (props) => {
                   aria-label="Open menu"
                   variant="ghost"
                   borderRadius="full"
-                  color="gray.900"
+                  _hover={{ bg: "whiteAlpha.400" }}
                   onClick={() => null}
                   icon={<ArrowUpIcon />}
                 />
@@ -64,18 +64,25 @@ export const Header: React.FC<Props> = (props) => {
                   aria-label="Open menu"
                   variant="ghost"
                   borderRadius="full"
-                  color="gray.900"
+                  _hover={{ bg: "whiteAlpha.400" }}
                   onClick={() => null}
                   icon={<ArrowDownIcon />}
                 />
               </HStack>
+              <Box display={{ base: "block", md: "none" }}>
+                <Link to="taiwan">
+                  <Text as="span" fontSize="lg" color="#00e1ee" _hover={{ color: "orange", textDecoration: "underline" }}>
+                    Taiwan
+                  </Text>
+                </Link>
+              </Box>
               <IconButton
                 size={headerIconSize}
                 fontSize="xl"
                 aria-label="Open menu"
                 variant="ghost"
                 borderRadius="full"
-                color="gray.900"
+                _hover={{ bg: "whiteAlpha.400" }}
                 onClick={toggleDrawer}
                 icon={<HamburgerIcon />}
               />

@@ -22,9 +22,9 @@ export const Layout: React.FC = () => {
   }, [isModalOpen]);
 
   return (
-    <Flex flexDir="column" h="100vh">
+    <Flex flexDir="column" h="100vh" bg="gray.800" color="gray.200">
       <Header toggleDrawer={toggleDrawer} />
-      <Box as="main" flex={1} w="full" bg="gray.800">
+      <Box as="main" flex={1} w="full">
         <Suspense fallback={<Loading />}>
           <Outlet context={{ isModalOpen, setModalOpen }} />
         </Suspense>
